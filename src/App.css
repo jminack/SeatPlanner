@@ -1,0 +1,400 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-color);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.toolbar-left h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.class-name-input {
+  width: 200px;
+}
+
+.toolbar-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gender-mode-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Error banner */
+.error-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 12px 20px;
+  color: #dc2626;
+}
+
+.error-banner ul {
+  margin: 8px 0 8px 20px;
+}
+
+.error-banner button {
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  padding: 4px 12px;
+}
+
+/* Main content */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Student panel */
+.student-panel {
+  width: 280px;
+  min-width: 280px;
+  background: var(--surface);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.student-panel h2 {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  margin: 0;
+}
+
+.student-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px;
+}
+
+.student-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  background: var(--background);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.student-card:hover {
+  background: #e8f4fd;
+}
+
+.student-card.selected {
+  border-color: var(--selected-color);
+  background: #e8f4fd;
+}
+
+.student-card[draggable="true"] {
+  cursor: grab;
+}
+
+.student-card[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.student-name {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.row-pref-badge {
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.row-pref-badge.front {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.row-pref-badge.back {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.student-gender {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.gender-M {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.gender-F {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.gender-O {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.empty-message {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Classroom panel */
+.classroom-panel {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.classroom-panel h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.classroom-front {
+  text-align: center;
+  padding: 8px;
+  background: var(--text-secondary);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.classroom-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.grid-row {
+  display: flex;
+  gap: 24px;
+}
+
+.seat-pair {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background: var(--background);
+  border: 2px solid transparent;
+}
+
+.seat-pair.banned {
+  border-color: var(--danger-color);
+  background: #fef2f2;
+}
+
+.seat-pair.preferred {
+  border-color: var(--success-color);
+  background: #f0fdf4;
+}
+
+.seat {
+  width: 100px;
+  height: 60px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.seat:hover:not(.empty) {
+  border-color: var(--primary-color);
+  background: #f8fafc;
+}
+
+.seat.selected {
+  border-color: var(--selected-color);
+  background: #e8f4fd;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+.seat.empty {
+  background: var(--background);
+  cursor: default;
+}
+
+.seat[draggable="true"] {
+  cursor: grab;
+}
+
+.seat[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.seat-name {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.seat-gender {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-top: 4px;
+}
+
+.seat-empty {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--surface);
+  padding: 24px;
+  border-radius: 12px;
+  min-width: 300px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.modal p {
+  margin: 0 0 16px;
+  color: var(--text-secondary);
+}
+
+.existing-constraint {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Instructions footer */
+.instructions {
+  padding: 12px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.instructions p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .student-panel {
+    width: 100%;
+    min-width: 100%;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar-left,
+  .toolbar-center,
+  .toolbar-right {
+    justify-content: center;
+  }
+}
