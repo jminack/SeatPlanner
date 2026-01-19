@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(timeout /t 5 /nobreak)",
+      "Bash(git init:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Seat Planner application\n\nA React + TypeScript web application for teachers to create classroom\nseating plans with constraint-based optimization.\n\nFeatures:\n- CSV import for student lists \\(name, gender\\)\n- Two-panel UI with student list and classroom grid\n- Pair constraints: ban or prefer students sitting together\n- Row preferences: front or back row placement\n- Gender mode: same or different gender pairing\n- Drag-and-drop manual placement\n- Save/load plans as JSON\n- PDF export with full details\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd GitHub Pages deployment configuration\n\n- Add base path to vite.config.ts for subpath deployment\n- Add GitHub Actions workflow for automatic build and deploy\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
