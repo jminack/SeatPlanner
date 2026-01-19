@@ -1,11 +1,4 @@
-import { SeatingPlan, Student, Constraint, RowPreference } from '../types';
-
-interface PlacementScore {
-  studentId: string;
-  row: number;
-  col: number;
-  score: number;
-}
+import { SeatingPlan, Constraint } from '../types';
 
 function getConstraint(
   constraints: Constraint[],
