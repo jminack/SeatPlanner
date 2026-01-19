@@ -1,4 +1,4 @@
-import { SeatingPlan, Constraint } from '../types';
+import { SeatingPlan, Student, Constraint, RowPreference } from '../types';
 
 function getConstraint(
   constraints: Constraint[],
